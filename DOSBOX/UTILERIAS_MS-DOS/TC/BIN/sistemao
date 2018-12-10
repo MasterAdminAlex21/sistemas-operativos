@@ -1,0 +1,173 @@
+
+jmp 1f7
+db 'Seleccione una opcion del menu'
+db '1- Mostrar hora'
+db '2- Coche Fantastico'
+db '3- Salir'
+db 'Desarrollado por Oscar Rodriguez Parra http://sistemasorp.blogspot.com'
+db '00:00:00'
+db 'Fijese en las luces del teclado'
+db 'Retire el disco o cd de la unidad de arranque y pulse una tecla'
+cli
+xor ax,ax
+mov ss,ax
+mov sp,7c00
+mov es,ax
+mov ds,ax
+sti
+mov ah,0
+mov dl,0
+int 13h
+mov ax,201
+mov bx,7e00
+mov cx,2
+xor dx,dx
+int 13h
+mov ax,3
+int 10h
+mov ax,1001
+mov bh,1
+int 10h
+mov ax,1300
+mov bx,2
+mov cx,1e
+mov dx,0119
+mov bp,7c03
+int 10h
+mov ax,1300
+mov bx,2
+mov cx,0f
+mov dx,0519
+mov bp,7c21
+int 10h
+mov ax,1300
+mov bx,2
+mov cx,13
+mov dx,0619
+mov bp,7c30
+int 10h
+mov ax,1300
+mov bx,2
+mov cx,8
+mov dx,0719
+mov bp,7c43
+int 10h
+mov ax,1300
+mov bx,4
+mov cx,46
+mov dx,1705
+mov bp,7c4b
+int 10h
+mov ah,0
+int 16h
+push ax
+mov ax,700
+mov bh,0
+mov cx,0900
+mov dx,094f
+int 10h
+pop ax
+cmp ah,2
+je 29f
+cmp ah,3
+je 2fd
+cmp ah,4
+jne 29d
+jmp 32f
+jmp 278
+mov ah,2
+int 1ah
+push cx
+mov bx,7c91
+mov al,ch
+mov cl,4
+shr al,cl
+add al,30
+mov [bx],al
+inc bx
+mov al,ch
+and al,0f
+add al,30
+mov [bx],al
+add bx,2
+pop cx
+mov ch,cl
+mov al,ch
+mov cl,4
+shr al,cl
+add al,30
+mov [bx],al
+inc bx
+mov al,ch
+and al,0f
+add al,30
+mov [bx],al
+add bx,2
+mov al,dh
+mov cl,4
+shr al,cl
+add al,30
+mov [bx],al
+inc bx
+mov al,dh
+and al,0f
+add al,30
+mov [bx],al
+mov ax,1300
+mov bx,7
+mov cx,8
+mov dx,0919
+mov bp,7c91
+int 10h
+jmp 278
+mov ax,1300
+mov bx,7
+mov cx,1f
+mov dx,0919
+mov bp,7c99
+int 10h
+mov cx,3
+mov ah,2
+call 346
+mov ah,4
+call 346
+mov ah,1
+call 346
+mov ah,4
+call 346
+loop 311
+mov ah,0
+call 346
+jmp 278
+mov ax,1300
+mov bx,7
+mov cx,3f
+mov dx,0908
+mov bp,7cb8
+int 10h
+mov ah,0
+int 16h
+int 19h
+push cx
+cli
+mov al,ed
+out 60,al
+in al,64
+test al,2
+loopnz 34c
+mov al,ah
+out 60,al
+sti
+mov ah,0
+int 1ah
+mov bx,dx
+add bx,9
+mov ah,0
+int 1ah
+cmp bx,dx
+jnz 360
+pop cx
+ret
+
+
+ 

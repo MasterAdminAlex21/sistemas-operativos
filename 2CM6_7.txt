@@ -1,0 +1,29 @@
+¿Quiénes diseñaron la Macintosh?
+Ingenieros industriales
+Ingenieros en computacion
+Ingenieros informaticos
+Diseñadores graficos
+
+¿Cuáles son los 2 tipos de multiplexaje?
+Tiempo y espacio
+Division en codigo y tiempo
+Tiempo y frecuencia
+Asíncrona y de onda
+
+¿En qué intervalo de años fue la 2a generacion de SO?
+1955-1965
+1792-1871
+1945-1955
+1965-1980
+
+Cada vez que terminaba un trabajo en ejecución, el sistema operativo podia cargar un nuevo trabajo del disco en la partición que estaba vacía, y lo ejecutaba. A esa tecnica se le conoce como:
+Spooling
+Ada Lovelace
+Circuitos integrados
+OS/360
+
+Nombre de la 1a programadora del mundo
+Ada Lovelace
+Charles Babage
+Clifford Berry
+Gary Kildall

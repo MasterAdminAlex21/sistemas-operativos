@@ -1,0 +1,17 @@
+Sistemas operativos
+
+software
+controla
+interfaz usuario hw
+gestiona recursos
+abstraccion entre aplicaciones
+
+
+cpu ram -> elementos basicos para arrancar un SO
+
+bus entre cpu<->ram: 
+ bus de datos
+ bus de control
+ bus direcciones
+
+printf("%p"); // imprime el apuntador de una variable(1a direccion)

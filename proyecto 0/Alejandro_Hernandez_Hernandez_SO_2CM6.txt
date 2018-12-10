@@ -1,0 +1,480 @@
+int main(){//ejercicio 34 1
+ printf("ejercicio 34-1");
+ printf("\n        *\n       *\n      *\n *   *\n  * * \n   *\n"); 
+}
+****************************************************************************
+int main(){//ejercicio 34 2
+ int radius=10;//radio de la esfera
+ float pi=3.1416;//valor estandar de pi
+ double v=(4.0f/3.0f)*pi*(radius*radius*radius);//volumen; nota: al hacer divisiones, colocar el f de float al final
+ printf("volumen de una esfera de radio de 10 metros: %lf\n",v);//imprime el valor de v
+}
+****************************************************************************
+int main(){//ejercicio 34 3
+ int monto=0,m1=0,m2=0,m3=0,m4=0;//m1=20,m2=10,m3=5,m4=1 , los montos
+ printf("Ingrese monto: \n");
+ scanf("%d",&monto);
+ while(monto!=0){
+  if(monto/20!=0){
+   m1=monto/20;
+   monto-=(m1*20);
+  }
+  if(monto/10!=0){
+   m2=monto/10;
+   monto-=(m2*10);
+  }
+  if(monto/5!=0){
+   m3=monto/5;
+   monto-=m3*5;
+  }
+  if(monto/1!=0){
+   m4=monto/1;
+   monto-=(m4*1);
+  }
+ }
+
+ printf("cantidades:\n$20: %d\n$10: %d\n$5: %d\n$1: %d\n",m1,m2,m3,m4);
+}
+*******************************************************************************
+int main(){//ejercicio 50 1
+ int d,m,a;//dia,mes,año
+ printf("ingrese fecha[mm/dd/aaaa]: ");
+ scanf("%d/%d/%d",&m,&d,&a);
+ if(d<=31 && d>0 && m<=12 &&m>0){
+  if(m<10 && d<10){
+   printf("fecha ingresada: %d0%d0%d\n",a,m,d);
+  }else if(m<10 && d>10){
+   printf("fecha ingresada: %d0%d%d\n",a,m,d);
+  }else if(d<10 && m>10){
+   printf("fecha ingresada: %d%d0%d\n",a,m,d);
+  }else{
+   printf("fecha ingresada: %d%d%d\n",a,m,d);
+  }
+ }else{
+  printf("ERROR: fecha incorrecta\n");
+ }
+}
+*******************************************************************************
+int main(){//ejercicio 50 4
+ int lada,num1,num2;
+ getchar();
+ printf("ingrese numero de telefono[(xxx) xxxx-xxxx]: ");
+ scanf("(%d) %d-%d",&lada,&num1,&num2);
+ if(lada>0 && lada<1000 && num1>-1 && num1<10000 && num2>-1 && num2<10000){
+  printf("numero ingresado: %d.%d.%d\n",lada,num1,num2);
+ }
+}
+********************************************************************************
+int main(){//ejercicio 50 6
+ int num1,den1,num2,den2,numres,denres;
+ printf("Ingrese fracciones a sumar separado por el signo '+' [a/b+c/d]: ");
+ scanf("%d/%d+%d/%d",&num1,&den1,&num2,&den2);
+ numres=(num1*den2)+(den1*num2);
+ denres=den1*den2;
+ printf("Resultado: %d/%d \n",numres,denres);
+}
+*********************************************************************************
+int main(){//ejercicio 71 1
+ int numero;
+ printf("ingresa un numero de 2 digitos: ");
+ scanf("%d",&numero);
+ printf("el numero al reves: %d%d\n",numero%10,numero/10);
+}
+**********************************************************************************
+int main(){//ejercicio 71 4
+ int num,i=0;
+ printf("Ingrese numero entre 0 y 32767: ");
+ scanf("%d",&num);
+
+ char octal[20];
+ while(num!=0){
+  int aux=num%8;
+  octal[i]=0|aux;
+  num/=8;
+  i++;
+ }
+ octal[i]=num;
+ for(i;i>-1;i--){
+  printf("%d",octal[i]);
+ }
+}
+***********************************************************************************
+int main(){//ejercicio 95 1
+ int num;
+ printf("Ingrese numero(1-999): ");
+ scanf("%d",&num);
+ if(num>0 && num<10){
+  printf("El numero es de 1 digito\n");
+ }else if(num>9 && num<100){
+  printf("El numero es de 2 digitos\n");
+ }else if(num>99 && num<1000){
+  printf("El numero es de 3 digitos\n");
+ }
+}
+***********************************************************************************
+int main(){//ejercicio 95 7
+ printf("Ingrese 4 numeros enteros (a b c d): ");
+ int array[4],mayor=0,menor=999999999;
+ scanf("%d %d %d %d",&array[0],&array[1],&array[2],&array[3]);
+ for(int i=0;i<4;i++){
+  if(array[i]>mayor){
+   mayor=array[i];
+  }
+
+  if(array[i]<menor){
+   menor=array[i];
+  }
+ }
+
+ printf("Numero mayor: %d\nNumero menor: %d\n",mayor,menor);
+}
+***********************************************************************************
+int main(){//ejercicio 95 10
+ printf("Ingrese calificacion: ");
+ int grado;
+ scanf("%d",&grado);
+ int index=grado/10;
+ switch(index){
+  case 10:
+  printf("Grado: A\n");
+  break;
+  case 9:
+  printf("Grado: A\n");
+  break;
+  case 8:
+  printf("Grado: B\n");
+  break;
+  case 7:
+  printf("Grado: C\n");
+  break;
+  case 6:
+  printf("Grado: D\n");
+  break;
+  default:
+  printf("Grado: F\n");
+ }
+}
+***********************************************************************************
+int main(){//ejercicio 122 1
+ double array[100];
+ int index=0;
+ double dato=1;
+
+ while((dato!=0 && dato>0) && (index<100)){
+  printf("Escribe el numero: ");
+  scanf("%lf",&dato);
+  array[index]=dato;
+  index+=1;
+ }
+
+ double max=0;
+ for(int i=0;i<=index;i++){
+  if(max<array[i]){
+   max=array[i];
+  }
+ }
+ printf("El numero mayor: %0.3lf\n",max );
+}
+***********************************************************************************
+int main(){//ejercicio 122 8
+ printf("Ingrese numero de dias: ");
+ int dias,inicio;
+ scanf("%d",&dias);
+ printf("Ingrese dia de inicio (Dom=1, Sab=7): ");
+ scanf("%d",&inicio);
+ switch(inicio){
+  case 1:
+   for(int i=0;i<dias;i++){
+    printf("%d\t",i+1);
+    if((i+1)%7==0){
+     printf("\n");
+    }
+   }
+  break;
+  case 2:
+   printf("\t");
+   for(int i=0;i<dias;i++){
+    printf("%d\t",i+1);
+    if((i+2)%7==0){
+     printf("\n");
+    }
+   }
+  break;
+  case 3:
+  printf("\t\t");
+   for(int i=0;i<dias;i++){
+    printf("%d\t",i+1);
+    if((i+3)%7==0){
+     printf("\n");
+    }
+   }
+  break;
+  case 4:
+  printf("\t\t\t");
+   for(int i=0;i<dias;i++){
+    printf("%d\t",i+1);
+    if((i+4)%7==0){
+     printf("\n");
+    }
+   }
+  break;
+  case 5:
+  printf("\t\t\t\t");
+   for(int i=0;i<dias;i++){
+    printf("%d\t",i+1);
+    if((i+5)%7==0){
+     printf("\n");
+    }
+   }
+  break;
+  case 6:
+  printf("\t\t\t\t\t");
+   for(int i=0;i<dias;i++){
+    printf("%d\t",i+1);
+    if((i+6)%7==0){
+     printf("\n");
+    }
+   }
+  break;
+  case 7:
+  printf("\t\t\t\t\t\t");
+   for(int i=0;i<dias;i++){
+    printf("%d\t",i+1);
+    if((i+7)%7==0){
+     printf("\n");
+    }
+   }
+  break;
+ }
+ printf("\n");
+}
+*************************************************************************************
+int main(){//ejercicio 122 11
+ int d[100],m[100],a[100],index=0,d1=1,m1=1,a1=1;
+ while(index<100 || (d1!=0 && m1!=0 && a1!=0)){
+  printf("Ingrese fecha(dd/mm/aa): ");
+  scanf("%d/%d/%d",&d1,&m1,&a1);
+  if(d1==0 && m1==0 && a1==0) break;
+  else{
+   d[index]=d1;
+   m[index]=m1;
+   a[index]=a1;
+   index+=1;
+  }
+ }
+ d1=m1=a1=9999;
+ for(int i=0;i<index;i++){
+  if(a[i]<a1){
+   a1=a[i];
+   m1=m[i];
+   d1=d[i];
+  }else if(a[i]==a1){
+   if(m[i]<m1){
+    a1=a[i];
+    m1=m[i];
+    d1=d[i];
+   }else if(m[i]==m1){
+    if(d[i]<d1){
+     a1=a[i];
+     m1=m[i];
+     d1=d[i];
+    }else if(d[i]==d1){
+     a1=a[i];
+     m1=m[i];
+     d1=d[i];
+    }
+   }
+  }
+ }
+ printf("Fecha mas antigua: %d/%d/%d\n",d1,m1,a1 );
+}
+**************************************************************************************
+int main(){//ejercicio 157 1
+ //int i,n;
+ short i;
+ short n;
+ printf("Imprime una tabla de cuadrados\n");
+ printf("Ingresa numero de entradas en la tabla: ");
+ scanf("%hd",&n);
+
+ for(i=1;i<=n;i++){
+  printf("%10hd%10hd\n",i,i*i );
+ }
+
+ //numero minimo para que falle con enteros: 46341
+ //para short, en 32677 entra en un bucle con el printf %d
+ //para el short, en 182 falla
+}
+***************************************************************************************
+int main(){//ejercicio 157 6
+ printf("size of:\nint: %d\nshort: %d\nlong: %d\nfloat: %d\ndouble: %d\nlong double: %d\n",sizeof(int),sizeof(short),sizeof(long),sizeof(float),sizeof(double),sizeof(long double));
+}
+***************************************************************************************
+int main(){//ejercicio 157 15
+ printf("Ingrese numero para obtener factorial: ");
+ int num,aux;
+ scanf("%d",&num);
+ for(aux=num-1;aux>0;aux--){
+  if(aux==0) break;
+  num*=aux;
+ }
+ printf("Factorial: %d\n",num);
+}
+****************************************************************************************
+int main(){//repdigit.c, ejercicio 178 1
+ bool digit_seen[10]={false};
+ int digit,i=0;
+ long n;
+ int array[10];
+
+ printf("Ingrese numero: ");
+ scanf("%ld",&n);
+ while(n>0){
+  digit=n%10;
+  if(digit_seen[digit]==true){
+   //break;
+   array[i]=digit;
+   i+=1;
+  }
+  digit_seen[digit]=true;
+  n/=10;
+ }
+ printf("numeros repetidos: ");
+ while(i>0){
+  printf("%d ",array[i-1] );
+  i-=1;
+ }
+ printf("\n");
+}
+*****************************************************************************************
+int main(){//ejercicio 178 7
+ int array[5][5];
+ for(int i=0;i<5;i++){
+  printf("Ingrese numeros (x x x x x): ");
+  scanf("%d %d %d %d %d",&array[i][0],&array[i][1],&array[i][2],&array[i][3],&array[i][4]);
+ }
+
+ printf("Suma de filas: ");
+ for(int i=0;i<5;i++){
+  printf("%d ",array[i][0]+array[i][1]+array[i][2]+array[i][3]+array[i][4]);
+ }
+
+ printf("\nSuma de columnas: ");
+ for(int i=0;i<5;i++){
+  printf("%d ",array[0][i]+array[1][i]+array[2][i]+array[3][i]+array[4][i]);
+ }
+ printf("\n");
+
+}
+*******************************************************************************************
+int main(){//ordenamiento ejercicio 216 1
+ int array[100];
+ int n,n2;
+ printf("Ingrese cantidad de numeros: ");
+ scanf("%d",&n);
+ n2=n;
+ while(n>0){
+  printf("ingrese numero: ");
+  scanf("%d",&array[n-1]);
+  n-=1;
+ }
+ n=0;
+ selection_sort(&array,n2-1);
+ printf("Array: ");
+ while(n<n2){
+  printf("|%d|",array[n] );
+  n+=1;
+ }
+ printf("\n");
+}
+
+void selection_sort(int *array, int pos){
+ if(pos==0){
+ }else{
+  int n1=0,n2,i,x;
+  for(i=pos;i>-1;i--){
+   if(array[i]>=n1){
+    n1=array[i];
+    x=i;
+   }
+  }
+  n2=array[pos];
+  array[pos]=n1;
+  array[x]=n2;
+  selection_sort(array,pos-1);
+ }
+}
+*********************************************************************************************
+#include<math.h>
+int main(){//ejercicio 216 6
+ int x;
+ printf("la expresion a evaluar es: 3x^5+2x^4-5x^3-x^2+7x-6\n");
+ printf("Ingrese valor de x: ");
+ scanf("%d",&x);
+ double valor=(3*pow(x,5))+(2*pow(x,4))-(5*pow(x,3))-pow(x,2)+(7*x)-6;
+ printf("Resultado: %0.0f\n",valor);
+}
+**********************************************************************************************
+void pay_amount(int, int*, int*,int*,int*);
+
+int main(){//ejercicio 256 4
+ int monto,v=0,d=0,c=0,u=0;//v-veinte,d-diez,c-cinco,u-uno
+ printf("Ingrese monto: \n");
+ scanf("%d",&monto);
+ pay_amount(monto,&v,&d,&c,&u);
+ printf("cantidades:\n$20: %d\n$10: %d\n$5: %d\n$1: %d\n",v,d,c,u);
+
+}
+
+void pay_amount(int monto1, int* veinte,int* diez, int* cinco, int* uno){
+ int monto=monto1;
+ while(monto!=0){
+  if(monto/20!=0){
+   *veinte=monto/20;
+   monto-=((*veinte)*20);
+  }
+  if(monto/10!=0){
+   *diez=monto/10;
+   monto-=((*diez)*10);
+  }
+  if(monto/5!=0){
+   *cinco=monto/5;
+   monto-=((*cinco)*5);
+  }
+  if(monto/1!=0){
+   *uno=monto/1;
+   monto-=((*uno)*1);
+  }
+ }
+}
+*************************************************************************************************
+int main(){//ejercicio 275 1
+ printf("Ingrese mensaje: ");
+ char msg[100];
+ int i=0;
+ char c;
+ while((c=getchar())!='\n'){
+  msg[i]=c;
+  i+=1;
+ }
+ printf("Mensaje al reves: ");
+ while(i>-1){
+  printf("%c",msg[i] );
+  i-=1;
+ }
+ printf("\n");
+}
+**************************************************************************************************
+int main(int argc,char *argv[]){//ejercicio 311 5
+ printf("%d\n",atoi(argv[1])+atoi(argv[2])+atoi(argv[3]) );
+}
+***************************************************************************************************
+int main(){//ejercicio 311 18
+ char *mes[]={"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+ printf("Ingrese fecha (dd/mm/aaaa): ");
+ int d,m,a;
+ scanf("%d/%d/%d",&d,&m,&a);
+
+ printf("la fecha ingresada es: %s %d, %d\n",mes[m-1],d,a );
+}
+****************************************************************************************************
